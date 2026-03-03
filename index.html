@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pranay Math Practice App</title>
+
+<style>
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+}
+
+h1{
+color:#00f5ff;
+text-shadow:0 0 10px #00f5ff;
+}
+
+.container{
+padding:20px;
+}
+
+select{
+padding:10px;
+border-radius:8px;
+border:none;
+margin:15px;
+font-size:16px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:20px;
+margin:20px auto;
+width:90%;
+max-width:700px;
+border-radius:15px;
+box-shadow:0 0 20px rgba(0,255,255,0.3);
+text-align:left;
+}
+
+button{
+background:#00f5ff;
+color:black;
+border:none;
+padding:8px 15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+margin-top:10px;
+}
+
+button:hover{
+background:white;
+}
+
+.solution{
+margin-top:15px;
+background:rgba(0,0,0,0.5);
+padding:15px;
+border-radius:10px;
+display:none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>📘 Maharashtra Board Math App</h1>
+<h3>Chapter 9 - Surface Area & Volume</h3>
+
+<select onchange="loadSet(this.value)">
+<option value="">Select Practice Set</option>
+<option value="9.3">Practice Set 9.3</option>
+</select>
+
+<div id="content"></div>
+
+</div>
+
+<script>
+
+const practiceData = {
+
+"9.3":[
+{
+q:"Q1 (i) Find surface area & volume of sphere (r=4cm, π=3.14)",
+a:"Surface Area = 200.96 cm² | Volume = 267.95 cm³"
+},
+{
+q:"Q2 Radius of hemisphere = 5cm",
+a:"CSA = 157 cm² | TSA = 235.5 cm²"
+},
+{
+q:"Q3 Surface area = 2826 cm² find volume",
+a:"r = 15 cm | Volume = 14130 cm³"
+},
+{
+q:"Q4 Volume = 38808 cm³ (π=22/7)",
+a:"r = 21 cm | Surface Area = 5544 cm²"
+},
+{
+q:"Q5 Volume of hemisphere = 18000π",
+a:"r = 30 cm | Diameter = 60 cm"
+}
+]
+
+};
+
+function loadSet(set){
+
+const content = document.getElementById("content");
+content.innerHTML="";
+
+practiceData[set].forEach((item,index)=>{
+
+content.innerHTML += `
+<div class="card">
+<h4>${item.q}</h4>
+<button onclick="toggle(${index})">Show Solution</button>
+<div id="sol${index}" class="solution">${item.a}</div>
+</div>
+`;
+
+});
+
+}
+
+function toggle(i){
+let sol=document.getElementById("sol"+i);
+sol.style.display = sol.style.display==="block" ? "none" : "block";
+}
+
+</script>
+
+</body>
+</html>
