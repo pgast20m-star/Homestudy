@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sponsor Button</title>
+
+<style>
+
+body{
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#f5f5f5;
+}
+
+.sponsor-btn{
+background:#ff4d6d;
+color:white;
+border:none;
+padding:15px 30px;
+font-size:20px;
+border-radius:40px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.sponsor-btn:hover{
+transform:translateY(-5px) scale(1.1);
+background:#ff1e4d;
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="sponsor-btn" onclick="sponsor()">❤️ Sponsor</button>
+
+<script>
+
+function sponsor(){
+window.open("https://buymeacoffee.com/yourname");
+}
+
+</script>
+
+</body>
+</html># These are supported funding model platforms
+
+github: # Replace with up to 4 GitHub Sponsors-enabled usernames e.g., [user1, user2]
+patreon: # Replace with a single Patreon username
+open_collective: # Replace with a single Open Collective username
+ko_fi: # Replace with a single Ko-fi username
+tidelift: # Replace with a single Tidelift platform-name/package-name e.g., npm/babel
+community_bridge: # Replace with a single Community Bridge project-name e.g., cloud-foundry
+liberapay: # Replace with a single Liberapay username
+issuehunt: # Replace with a single IssueHunt username
+lfx_crowdfunding: # Replace with a single LFX Crowdfunding project-name e.g., cloud-foundry
+polar: # Replace with a single Polar username
+buy_me_a_coffee: # Replace with a single Buy Me a Coffee username
+thanks_dev: # Replace with a single thanks.dev username
+custom: # Replace with up to 4 custom sponsorship URLs e.g., ['link1', 'link2']
